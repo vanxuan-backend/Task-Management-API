@@ -1,0 +1,35 @@
+# 1. Environment variables & Secrets (Bảo mật - Không bao giờ push)
+.env
+.env.*
+!.env.example
+
+# 2. Virtual Environment (Môi trường ảo - Dung lượng lớn, không push)
+venv/
+env/
+ENV/
+.venv/
+
+# 3. Python Cache & Compiled Files (File rác Python tự sinh ra khi chạy)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 4. Database (File cơ sở dữ liệu cục bộ nếu dùng SQLite)
+*.sqlite3
+*.db
+
+# 5. IDE & Editor Configs (Cấu hình riêng của VS Code, PyCharm...)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 6. Testing & Coverage (File rác sinh ra khi chạy Pytest)
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 7. OS generated files (File rác của hệ điều hành Windows / macOS)
+.DS_Store
+Thumbs.db
