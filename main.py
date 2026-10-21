@@ -7,6 +7,8 @@ from app.core.config import settings
 from app.core.database import engine, Base
 from app.api.task import router as task_router
 
+from app.api.user import router as user_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -22,6 +24,7 @@ app = FastAPI(
 
 app.add_exception_handler(Exception, global_exception_handler)
 app.include_router(task_router)
+app.include_router(user_router)
 
 @app.get("/health", tags=["Health Check"])
 def health_check():
@@ -31,4 +34,4 @@ def health_check():
     
 @app.get("/")
 def read_root():
-    return {"message": f"Welcome to {settings.PROJECT_NAME}!"}
+    return {"message": f"Welcome to {settings.TASK_MANAGEMENT_API}!"}

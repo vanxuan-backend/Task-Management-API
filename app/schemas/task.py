@@ -20,11 +20,20 @@ class TaskUpdate(BaseModel):
     is_completed: Optional[bool] = None
 
 
+class UserMineResponse(BaseModel):
+    id: int
+    email: str
+
+    model_config = {"from_attributes": True}
+
+
 class TaskResponse(TaskBase):
     id: int
     user_id: int
     created_at: datetime
     updated_at: datetime
+
+    owner: Optional[UserMineResponse] = None
 
     model_config = {
         "from_attributes": True,
